@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de PIX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pix-container {
+            background-color: #333333;
+            color: #fff;
+            border-radius: 25px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        .pix-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .qr-code img {
+            max-width: 50%;
+        }
+
+        .dados-pix {
+            margin-top: 20px;
+        }
+
+        .dados-pix p {
+            font-size: 20px;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        #confirmar-compra {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #confirmar-compra:hover {
+            background-color: #45a049;
+        }
+
+        #senha-input {
+            display: none; /* Ocultar o campo de senha por padrão */
+            padding: 10px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #confirmar-senha {
+            display: none; /* Ocultar o botão de confirmar senha por padrão */
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        #confirmar-senha:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function mostrarSenha() {
+            document.getElementById("senha-input").style.display = "block";
+            document.getElementById("confirmar-senha").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="pix-container">
+        <h1>Tela de PIX</h1>
+        <div class="qr-code">
+            <!-- Seu código QR PIX aqui -->
+            <img src="Untitled.png" alt="Código QR PIX">
+        </div>
+        <div class="dados-pix">
+            <p><strong>Chave PIX:</strong> seuemail@exemplo.com</p>
+            <p><strong>Valor:</strong> R$ 100,00</p>
+            <p><strong>Data:</strong> 26/10/2023</p>
+            <p><strong>Hora:</strong> 14:30</p>
+            <p><strong>Remetente:</strong> João da Silva</p>
+            <p><strong>Agência Bancária:</strong> 1234</p>
+        </div>
+        <a href="cmp.html"><button id="confirmar-compra">Confirmar Compra</button></a>
+        
+    </div>
+</body>
+</html>

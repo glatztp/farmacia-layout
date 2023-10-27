@@ -1,0 +1,95 @@
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.ga{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 7px 9px;
+  text-decoration: none;
+  margin-left: 390px;
+  
+}
+.d{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 7px 9px;
+  text-decoration: none;
+  margin-left: -100px;
+
+  
+}
+.f{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 7px 9px;
+  text-decoration: none;
+  margin-left: -100px;
+ 
+  
+}
+.g{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 7px 9px;
+  text-decoration: none;
+  margin-left: -100px;
+ 
+  
+}
+.h{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 7px 9px;
+  text-decoration: none;
+  margin-right: 600px;
+  margin-left: -100px;
+  
+
+  
+}
+
+.navbar a:hover {
+  background-color: #333;
+  color: black;
+}
+
+
+
+
+<div class="navbar">
+      <a  class = "ga" href="#Durateston">Durateston</a>
+      <a class = "d" href="#Minoxidil">Minoxidil</a>
+      <a class = "f" href="#Paracetamol">Paracetamol</a>
+      <a  class = "g"href="#Ibuprofeno">Ibuprofeno</a>
+      <a  class = "h"href="#Amoxicilina">Amoxicilina</a>
+    </div>
+
+
+     <script>
+
+    // Get all the buttons with class 'bnt2'
+var buttons = document.querySelectorAll('.bnt2');
+var buttons = document.querySelectorAll('button');
+
+// Loop through each button
+i = 0; i < buttons.length; i++) {
+    // Add a click event listener to each button
+    buttons[i].addEventListener('click', function() {
+        // Display a notification when the button is clicked
+        alert('Compra realizada com sucesso!');
+    });
+}
+
+  </script> 

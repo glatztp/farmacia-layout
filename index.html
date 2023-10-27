@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mary's Drogaria</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/icons8-spotify-48.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<style>
+  body {
+    background-image: url('img/f2.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+
+  #Service .titulo h2 {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #Service .box {
+    width: 10%;
+    /* Reduza a largura da caixa para 60% do tamanho original */
+    height: 10%;
+    /* Reduza a altura da caixa para 60% do tamanho original */
+  }
+
+
+  #Service .box img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  #Service .box h2 {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  #Service .box p {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #Service .container input[type=radio] {
+    display: none;
+  }
+
+  #Service .container .card {
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    top: -120px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: 5px 0 5px 0 #0000003f;
+    transition: 0.9s ease;
+    cursor: pointer;
+  }
+
+  #Service .container .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #Service .container .card button {
+    position: absolute;
+    bottom: 10px;
+    z-index: 9;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  #Service .container .cards {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+  #item-1:checked~.cards #song-3,
+  #item-2:checked~.cards #song-1,
+  #item-3:checked~.cards #song-2 {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  #item-1:checked~.cards #song-2,
+  #item-2:checked~.cards #song-3,
+  #item-3:checked~.cards #song-1 {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  #item-1:checked~.cards #song-1,
+  #item-2:checked~.cards #song-2,
+  #item-3:checked~.cards #song-3 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .titulo {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 40px;
+    text-shadow: 0 0 1px #f8f6f6;
+    color: #ee6e05;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #59bbb2;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.8s ease;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 180px;
+    border-radius: 15px;
+  }
+
+  button:hover {
+    border: 2.1px #81d8d0;
+    background: #81d8d0;
+    color: #fff;
+    transform: scale(0.8);
+    border-radius: 15px;
+  }
+
+  .navbar-toggler {
+    background-color: #fff !important;
+  }
+
+  .main {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 400px;
+    margin-right: 500px;
+    border: 0.5px solid #333;
+    border-radius: 25px;
+    margin-top: 75px;
+  }
+
+  .audio {
+    width: 250px;
+    height: 375px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1em;
+    background-color: #272727;
+    color: white;
+    box-shadow: 1px 1px 20px 1px rgb(90, 89, 89);
+    flex: 1 1 250px;
+    margin: 1em;
+    border-radius: 25px;
+  }
+
+  .audio img {
+    width: 200px;
+    height: 200px;
+    margin: 0.5em;
+    border-radius: 15px;
+  }
+
+  .audio h2 {
+    font-weight: 500;
+    font-size: medium;
+    margin: 0.5em;
+  }
+
+  .audio p {
+    font-size: small;
+    font-weight: 300;
+    text-align: center;
+    margin: 0.5em;
+  }
+
+  /* Estilos para a barra de navegação */
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    /* Cor de fundo da barra de navegação */
+    color: #fff;
+    /* Cor do texto */
+    padding: 10px 20px;
+  }
+
+  /* Estilos para o logotipo */
+  .logo {
+    width: 100px;
+    /* Defina o tamanho do logotipo conforme necessário */
+    height: 50px;
+    /* Defina o tamanho do logotipo conforme necessário */
+    background: url('seu-logo.png') center/contain no-repeat;
+    /* Substitua 'seu-logo.png' pelo caminho do seu logotipo */
+  }
+
+  /* Estilos para a lista de links na versão desktop */
+  .desktop-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .desktop-menu li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  .desktop-menu a {
+    text-decoration: none;
+    color: #fff;
+    /* Cor dos links na versão desktop */
+  }
+
+  /* Estilos para o ícone de menu na versão mobile */
+  .mobile-menu i {
+    font-size: 24px;
+    /* Tamanho do ícone de menu */
+    cursor: pointer;
+  }
+
+  /* Estilos para a lista de links na versão mobile */
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    /* Ocultar a lista de links na versão mobile por padrão */
+    background-color: #333;
+    /* Cor de fundo do menu mobile */
+    position: absolute;
+    top: 60px;
+    /* Ajuste a posição conforme necessário */
+    right: 0;
+  }
+
+  .mobile-menu li {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .mobile-menu a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    /* Cor dos links no menu mobile */
+  }
+
+  /* Estilos para mostrar a lista de links na versão mobile quando o ícone é clicado */
+  .mobile-menu.active ul {
+    display: block;
+  }
+  .bnt2{
+    padding: 10px 20px;
+    background: #de0b0b;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.8s ease;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 0px;
+    border-radius: 15px;
+}
+
+.bnt2:hover {
+    border: 2.1px #00bb22;
+    background:  #00bb22;
+    color: #fff;
+    transform: scale(1.1);
+    border-radius: 15px;
+}
+
+
+
+  
+</style>
+
+<body>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #4CAF50;">
+      <div class="container" >
+        <a class="navbar-brand" href="#"><img src="img/farma.jpeg"
+            style="width: auto; height: 70px; border-radius: 20px;  " alt="" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#Home">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About">Novidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Service">Destaque</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="window.location.href = 'indexcd.html';">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+
+
+
+
+    <section class="max-width bg" id="Service">
+      <div class="container">
+        <div class="content">
+          <div class="titulo">
+            <h2 class="text-md color-cinza-1" style="color: rgb(255, 255, 255); font-size:45px; text-shadow: 2px 2px 4px #000000; ">Promoções da Semana</h2>
+            <div class="line">
+              <div class="text-titulo" style="color: rgb(255, 255, 255); font-size:25px; text-shadow: 2px 2px 4px #000000; ">Destaque</div>
+            </div>
+          </div>
+          <input type="radio" name="slider" id="item-1" checked>
+          <input type="radio" name="slider" id="item-2">
+          <input type="radio" name="slider" id="item-3">
+          <div class="cards">
+            <label class="card" for="item-1" id="song-1">
+              <img src="img/Ozempic.png" alt="">
+              <button>Comprar Agora</button>
+            </label>
+
+            <label class="card" for="item-2" id="song-2">
+              <img src="https://redshark.me/wp-content/uploads/2020/09/dura.png">
+              <button>Comprar Agora</button>
+            </label>
+
+            <label class="card" for="item-3" id="song-3">
+              <img src="img/minoxidil.png">
+              <button>Comprar Agora</button>
+            </label>
+
+            <label class="card" for="item-3" id="song-3">
+              <img src="img/minoxidil.png">
+              <button>Comprar Agora</button>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mais"
+    style="text-align: center; background-color:#333; color: #ffffff; margin-left: 650px; margin-right: 650px; font-size: 50px; border: 2px solid #333; border-radius: 10px; margin-top: -180px;">
+    <h1 class="centered-text">Remédios mais Procurados</h1>
+</div>
+<div class="main">
+  <div class="audio audio1 dark">
+    <img src="https://redshark.me/wp-content/uploads/2020/09/dura.png" alt="">
+    <h2>Durateston</h2>
+    <p>Faixa Etária: Adultos</p>
+    <p>Quantidade (mg): 5mg</p>
+    <p>Tratamento para queda de cabelo.</p>
+    <p style="font-weight:bold; text-align:right; margin-left: -40px; margin-bottom: 25px;">Preço: R$ 15.08</p>
+    <button class="bnt2" type="button" onclick="window.location.href = 'pix.html';">Comprar</button>
+  </div>
+
+  <div class="audio audio1 dark">
+    <img src="img/minoxidil.png" alt="">
+    <h2>Minoxidil</h2>
+    <p>Faixa Etária: Adultos</p>
+    <p>Quantidade (mg): 250mg</p>
+    <p>Terapia de reposição de testosterona.</p>
+    <p style="font-weight:bold; text-align:right; margin-left: -40px; margin-bottom: 25px;">Preço: R$ 130.00</p>
+    <button class="bnt2" type="button" onclick="window.location.href = 'pix.html';">Comprar</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="audio audio1 dark">
+    <img src="https://www.drogarianovaesperanca.com.br/imagens-complete/300x300/paracetamol-500mg-com-20-comprimidos-f54e7f1e07.jpg" alt="">
+    <h2>Paracetamol</h2>
+    <p>Faixa Etária: Adultos</p>
+    <p>Quantidade (mg): 500mg</p>
+    <p>Tratamento para dor e febre.</p>
+    <p style="font-weight:bold; text-align:right; margin-left: -40px; margin-bottom: 25px;">Preço: R$ 10.00</p>
+    <button class="bnt2" type="button" onclick="window.location.href = 'pix.html';">Comprar</button>
+  </div>
+
+  <div class = "audio audio1 dark">
+    <img src="https://cdn1.staticpanvel.com.br/produtos/15/102215-15.jpg" alt="">
+    <h2>Ibuprofeno</h2>
+    <p>Faixa Etária: Adultos</p>
+    <p>Quantidade (mg): 400mg</p>
+    <p>Tratamento para dor, febre e inflamação.</p>
+    <p style="font-weight:bold; text-align:right; margin-left: -40px; margin-bottom: 25px;">Preço: R$ 11.29</p>
+    <button class="bnt2" type="button" onclick="window.location.href = 'pix.html';">Comprar</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="audio audio1 dark">
+    <img src="https://cdn-cosmos.bluesoft.com.br/products/7896004700427" alt="">
+    <h2>Amoxicilina</h2>
+    <p>Faixa Etária: Adultos</p>
+    <p>Quantidade (mg): 500mg</p>
+    <p>Antibiótico para tratar infecções bacterianas.</p>
+    <p style="font-weight:bold; text-align:right; margin-left: -40px; margin-bottom: 25px;">Preço: R$ 10.00</p>
+    <button class="bnt2" type="button" onclick="window.location.href = 'pix.html';">Comprar</button>
+  </div>
+
+<div class="audio audio1 dark">
+  <img src="img/minoxidil.png" alt="">
+  <h2>Minoxidil</h2>
+  <p>Faixa Etária: Adultos</p>
+  <p>Quantidade (mg): 250mg</p>
+  <p>Terapia de reposição de testosterona.</p>
+  <p style="font-weight:bold; text-align:right; margin-left: -40px; margin-bottom: 25px;" >Preço: R$ 130.00</p>
+  <button class="bnt2" type="button" onclick="window.location.href = 'pix.html';">Comprar</button>
+</div>
+
+
+</div>
+
+
+        
+
+    <div class="container">
+      <footer class="py-3 my-4">
+        <br>
+        <br>
+        <br>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a onclick="window.location.href = 'indexcd.html';" class = "nav-link px-2 text-muted">Contato</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li> 
+          <li class="nav-item"><a href="" class="nav-link px-2 text-muted">Sobre</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2023 Du'art, Inc</p>
+      </footer>
+    </div>
+
+  </body>
+ 
+
+</html>
+
+
+
+
+
+
+
